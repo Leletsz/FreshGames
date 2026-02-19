@@ -1,0 +1,38 @@
+<svg width="168" height="39" viewBox="0 0 180 39" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo opcional (remova se quiser transparente) -->
+  <!-- <rect width="168" height="39" fill="#111"/> -->
+
+  <!-- Ícone Controle -->
+  <g transform="translate(0,6)">
+    <path d="M10 15 
+             C10 10, 15 8, 22 8 
+             L32 8 
+             C39 8, 44 10, 44 15 
+             C44 20, 39 22, 35 20 
+             L30 18 
+             L24 18 
+             L19 20 
+             C15 22, 10 20, 10 15Z" 
+          fill="#ff7a00"/>
+    
+    <!-- Botões -->
+    <circle cx="34" cy="14" r="2" fill="white"/>
+    <circle cx="38" cy="16" r="2" fill="white"/>
+    
+    <!-- Direcional -->
+    <rect x="18" y="13" width="6" height="2" fill="white"/>
+    <rect x="20" y="11" width="2" height="6" fill="white"/>
+  </g>
+
+  <!-- Texto Fresh -->
+  <text x="52" y="25" font-family="Arial, Helvetica, sans-serif" 
+        font-size="20" font-weight="bold" fill="black">
+    Fresh
+  </text>
+
+  <!-- Texto Games -->
+  <text x="105" y="25" font-family="Arial, Helvetica, sans-serif" 
+        font-size="20" font-weight="bold" fill="#ff7a00">
+    Games
+  </text>
+</svg>
