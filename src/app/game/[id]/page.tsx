@@ -4,6 +4,49 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import Label from "./components/label";
 import GameCard from "@/src/components/GameCard";
+import { Metadata } from "next";
+
+interface PropsParams {
+  params: Promise<{
+    id: string;
+  }>;
+}
+
+export async function generateMetadata({
+  params,
+}: PropsParams): Promise<Metadata> {
+  const { id } = await params;
+
+  try {
+    const response: GameProps = await fetch(
+      `${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`,
+      { next: { revalidate: 60 } },
+    ).then((res) => res.json());
+
+    return {
+      title: response.title,
+      description: `${response.description.slice(0, 100)}...`,
+      openGraph: {
+        title: response.title,
+        images: [response.image_url],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true,
+        },
+      },
+    };
+  } catch (err) {
+    return {
+      title: "FreshGames - Explore aqui os melhores jogos",
+    };
+  }
+}
 
 async function getData(id: string) {
   try {
